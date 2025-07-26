@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,128 @@
 
 .read-the-docs {
   color: #888;
+} */
+/* App.css */
+
+.app {
+  text-align: center;
+  padding: 50px;
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  color: #ff00ff;
+  text-shadow: 2px 2px 5px #000;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background: black;
+  color: white;
+  border: 2px solid #ff00ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #ff00ff;
+  color: black;
+  transform: scale(1.05);
+}
+
+
+/*navbar*/
+.navbar ul {
+  z-index: 1000;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end; /* Push items to the right */
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background-color:  #c69fa5; /* optional: make it blend with background */
+}
+
+
+.navbar ul li {
+  margin-left: 15px;
+}
+
+
+.navbar ul li a {
+    display: block;
+    text-decoration: none;
+    color: #aa5aaa;
+    text-align: center;
+    padding:5px 5px;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline; /* adds underline on hover */
+  text-decoration-color: darkviolet;            /* text changes to a rich contrast color */
+}
+
+
+
+body.dark-mode {
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+body.dark-mode button {
+  background-color: #1a1a1a;
+  color: white;
+  border: 2px solid #ff00ff;
+}
+
+body.dark-mode h1 {
+  color: #ffffff;
+  text-shadow: 2px 2px 5px #aa00ff;
+}
+
+body.dark-mode .navbar ul {
+  background-color: #660066;
+}
+
+body.dark-mode .footer {
+  background-color: #990099;
+}
+
+
+/*Footer*/
+
+.footer { /* Example B: This styles elements with class="footer" */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #c69fa5; /* soft pink boba tone */
+  color: white;
+  text-align: Left;
+  padding: 10px 0;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 14px;
+  z-index: 1000; /* keeps it on top of other elements */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+.footer a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+.footer-icon {
+  width: 30px; /* or 20px, depending on your design */
+  height: 30px;
+  margin: 0 10px;
+}
+
+
+.footer a:hover {
+  color: #ffe0ec; /* light pastel hover */
 }
