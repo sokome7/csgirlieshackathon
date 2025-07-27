@@ -110,6 +110,9 @@ function App() {
       <p>
         We’d love to hear from you and keep spreading good vibes together!
       </p>
+      <p>
+        Check out my TikTok and Github repo below (click the images)!
+      </p>
     </section>
 
 
@@ -118,7 +121,7 @@ function App() {
         <a href="https://github.com/sokome7/csgirlieshackathon" target="_blank" rel="noopener noreferrer">
           <img src="/src/assets/github.png" alt="GitHub" className="footer-icon" />
         </a>
-        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.tiktok.com/t/ZT6kVyCAe/" target="_blank" rel="noopener noreferrer">
           <img src="/src/assets/tiktok.jpg" alt="TikTok" className="footer-icon" />
         </a>
     </footer>

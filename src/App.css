@@ -7,13 +7,36 @@ body {
 } */
 
 /* App Container */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Orbitron', Arial, sans-serif;
+}
+
 .app {
-  text-align: center;
-  padding: 50px;
+  max-width: 1000px;
+  width: 95%;
+  margin: 60px auto;
+  padding: 40px 30px;
   background: linear-gradient(145deg, #e6e6e6, #ffffff);
   border: 4px double #ff00ff;
   box-shadow: 0 0 20px #ff00ff;
   border-radius: 20px;
+  text-align: center;
+}
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Header */
@@ -69,6 +92,12 @@ button:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 
 .navbar ul li {
@@ -86,6 +115,39 @@ button:hover {
   background-color: #ffe0ff;
   text-decoration: underline;
 }
+#features,
+#about,
+#contact {
+  display: block; /* make sure it's treated like a block */
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 800px;
+  border: 3px double #ff00ff;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #fff0f8, #e0f7ff);
+  box-shadow: 0 0 15px #ff99ff, 0 0 30px #ccf2ff;
+  font-family: 'Orbitron', Arial, sans-serif;
+  color: #333;
+  transition: transform 0.3s ease;
+  text-align: left; /* optional: makes the text easier to read */
+}
+
+
+#features:hover,
+#about:hover,
+#contact:hover {
+  transform: scale(1.02);
+}
+
+body.dark-mode #features,
+body.dark-mode #about,
+body.dark-mode #contact {
+  background: linear-gradient(145deg, #1a001a, #2a002a);
+  border: 3px double #ff99ff;
+  color: #ffe6ff;
+  box-shadow: 0 0 12px #ff99ff, 0 0 24px #cc66ff;
+}
+
 
 /* Meme Image */
 .meme-image {
@@ -95,6 +157,71 @@ button:hover {
   border: 3px ridge #ff00ff;
   box-shadow: 0 0 10px #00ffff;
   animation: pop-in 0.4s ease-out, glitchImage 1s infinite;
+}
+
+/* Light Mode Enhancements */
+/* body.light-mode {
+  background: radial-gradient(circle at top, #dcdcdc 0%, #c0c0c0 100%);
+  color: #333;
+} */
+body.light-mode {
+  background-color: #e0e0e0;
+  background: radial-gradient(circle at top, #dcdcdc 0%, #c0c0c0 100%);
+  font-family: 'Orbitron', Arial, sans-serif;
+  color: #333;
+}
+
+/* Dark Mode Enhancements */
+body.dark-mode {
+  background: linear-gradient(to bottom, #000000, #1a001a);
+  color: white;
+  font-family: 'Orbitron', Arial, sans-serif;
+}
+/* Header text */
+body.dark-mode h1 {
+  text-shadow: 2px 2px 4px #ff00ff;
+}
+body.dark-mode .app {
+  background: linear-gradient(145deg, #3a003a, #926a92); /* lighter purples */
+  border-color: #ff99ff;
+  box-shadow: 0 0 20px #ff99ff;
+}
+
+
+
+/* Navbar background and text */
+body.dark-mode .navbar ul {
+  background-color: #330033;
+}
+
+body.dark-mode .navbar ul li a {
+  color: #ddaaff; /* light pastel purple for contrast */
+}
+
+body.dark-mode .navbar ul li a:hover {
+  background-color: #550055;
+  text-decoration-color: #ff99ff;
+}
+
+/* Footer background and text */
+body.dark-mode .footer {
+  background-color: #660066;
+  color: #ffe0ec;
+}
+
+body.dark-mode .footer a {
+  color: #ffe0ec;
+}
+
+body.dark-mode .footer a:hover {
+  color:  #330033;
+}
+
+
+.dark-mode-button:hover {
+  background-color: #ff00ff;
+  color: black;
+  transform: scale(1.05);
 }
 
 /* Footer */
@@ -150,74 +277,15 @@ button:hover {
   80% { transform: translate(1px, -2px); }
   100% { transform: translate(0); }
 }
-/* Light Mode Enhancements */
-/* body.light-mode {
-  background: radial-gradient(circle at top, #dcdcdc 0%, #c0c0c0 100%);
-  color: #333;
-} */
-body.light-mode {
-  background-color: #e0e0e0;
-  background: radial-gradient(circle at top, #dcdcdc 0%, #c0c0c0 100%);
-  font-family: 'Orbitron', Arial, sans-serif;
-  color: #333;
-}
-
-/* Dark Mode Enhancements */
-body.dark-mode {
-  background: linear-gradient(to bottom, #000000, #1a001a);
-  color: white;
-  font-family: 'Orbitron', Arial, sans-serif;
-}
-/* Header text */
-body.dark-mode h1 {
-  text-shadow: 2px 2px 4px #ff00ff;
-}
-body.dark-mode .app {
-  background: linear-gradient(145deg, #3a003a, #916691); /* lighter purples */
-  border-color: #ff99ff;
-  box-shadow: 0 0 20px #ff99ff;
-}
-
-
-
-/* Navbar background and text */
-body.dark-mode .navbar ul {
-  background-color: #330033;
-}
-
-body.dark-mode .navbar ul li a {
-  color: #ddaaff; /* light pastel purple for contrast */
-}
-
-body.dark-mode .navbar ul li a:hover {
-  background-color: #550055;
-  text-decoration-color: #ff99ff;
-}
-
-/* Footer background and text */
-body.dark-mode .footer {
-  background-color: #660066;
-  color: #ffe0ec;
-}
-
-body.dark-mode .footer a {
-  color: #ffe0ec;
-}
-
-body.dark-mode .footer a:hover {
-  color:  #330033;
-}
-
-
-.dark-mode-button:hover {
-  background-color: #ff00ff;
-  color: black;
-  transform: scale(1.05);
-}
 
 .footer-icon {
   width: 20px;
   height: 20px;
   margin: 0 8px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
