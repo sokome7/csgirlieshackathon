@@ -86,7 +86,7 @@ function App() {
       <section id="about" className="section">
         <h2>About</h2>
         <p>
-          Our purpose is to spread joy through unhinged compliments. This website idea was created by Shruthi (known as zrudi on Discord) as part of the CS Girlies Hackathon.
+          Our purpose is to spread joy through unhinged compliments. This website idea was created by Shruthi. This website was created for submission to the CS Girlies Hackathon.
         </p>
         <p>
           The CS Girlies Hackathon is a supportive and inclusive event that took place from July 25th to July 27th, 2025. It was designed to encourage women to collaborate, learn new skills, and build creative projects in a friendly environment.

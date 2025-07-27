@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
-
+/* 
 body {
   background: radial-gradient(circle at top, #dcdcdc 0%, #c0c0c0 100%);
   font-family: 'Orbitron', Arial, sans-serif;
   color: #333;
-}
+} */
 
 /* App Container */
 .app {
@@ -150,18 +150,35 @@ button:hover {
   80% { transform: translate(1px, -2px); }
   100% { transform: translate(0); }
 }
+/* Light Mode Enhancements */
+/* body.light-mode {
+  background: radial-gradient(circle at top, #dcdcdc 0%, #c0c0c0 100%);
+  color: #333;
+} */
+body.light-mode {
+  background-color: #e0e0e0;
+  background: radial-gradient(circle at top, #dcdcdc 0%, #c0c0c0 100%);
+  font-family: 'Orbitron', Arial, sans-serif;
+  color: #333;
+}
 
 /* Dark Mode Enhancements */
 body.dark-mode {
   background: linear-gradient(to bottom, #000000, #1a001a);
   color: white;
+  font-family: 'Orbitron', Arial, sans-serif;
 }
-
-
 /* Header text */
 body.dark-mode h1 {
   text-shadow: 2px 2px 4px #ff00ff;
 }
+body.dark-mode .app {
+  background: linear-gradient(145deg, #3a003a, #916691); /* lighter purples */
+  border-color: #ff99ff;
+  box-shadow: 0 0 20px #ff99ff;
+}
+
+
 
 /* Navbar background and text */
 body.dark-mode .navbar ul {
