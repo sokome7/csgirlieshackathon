@@ -1,57 +1,22 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vite.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.jsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-
 // export default App
 import { useState, useEffect } from 'react'
+import compliments from './compliments.js';
 import './App.css'
 
 function App() {
-  
-  const compliments = [
-    "You're like a human glitter bomb 💥✨",
-    "Your code runs smoother than butter on a bald monkey 🐒",
-    "You radiate chaotic good energy 💫",
-    "You're the WiFi signal in a world of dead zones 📶",
-    "Your brain? 100% CPU, no thermal throttling 🧠🔥"
-  ];
+
 
   const [compliment, setCompliment] = useState('');
+  const [memePath, setMemePath] = useState(''); // NEW STATE for meme image
 
   const generateCompliment = () => {
-    const randomIndex = Math.floor(Math.random() * compliments.length);
-    setCompliment(compliments[randomIndex]);
-  };
+  const randomIndex = Math.floor(Math.random() * compliments.length);
+  setCompliment(compliments[randomIndex]);
+
+  const memeNumber = Math.floor(Math.random() * 54) + 1;
+  setMemePath(`/Memes/meme${memeNumber}.jpg`);
+};
+
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleTheme = () => {
@@ -81,29 +46,72 @@ function App() {
       </nav>
 
       {/*Sections*/}
-      <section id= "home" className = "section">
-        <h1>✨ Glitchy Compliment Generator ✨</h1>
+      {/* <section id= "home" className = "section">
+        <h1>✨ iComplimentU ✨</h1>
         <p>Click below to generate a compliment</p>
         <button onClick={generateCompliment}>Generate Compliment</button>
         <p>{compliment}</p>
         
-      </section>
+      </section> */}
+      <section id="home" className="section">
+      <h1>✨ iComplimnet U ✨</h1>
+      <p>Click below to generate a compliment</p>
+      <button onClick={generateCompliment}>Generate Compliment</button>
+      
+      {compliment && (
+        <>
+          <p>{compliment}</p>
+          <img
+            src={memePath}
+            alt="Random Meme"
+            className="meme-image"
+          />
+        </>
+      )}
+    </section>
 
-      <section id= "features" className = "section">
+      <section id="features" className="section">
         <h2>Features</h2>
-        <p>Stuff goes here</p>
-      </section>
+        <ul>
+          <li>Generates random, glitchy compliments inspired by Gen Z and TikTok vibes</li>
+          <li>Displays a matching random meme for each compliment for extra fun</li>
+          <li>Dark mode and light mode toggle to suit your mood</li>
+          <li>Simple, clean design with easy navigation</li>
+          <li>Responsive layout that works great on phones and desktops</li>
+          <li>Open source and built with love by the CS Girlies Hackathon team</li>
+        </ul>
+    </section>
 
-      <section id= "about" className = "section">
+
+      <section id="about" className="section">
         <h2>About</h2>
-        <p>Our purpose is to spread joy through unhinged compliments</p>
+        <p>
+          Our purpose is to spread joy through unhinged compliments. This website idea was created by Shruthi (known as zrudi on Discord) as part of the CS Girlies Hackathon.
+        </p>
+        <p>
+          The CS Girlies Hackathon is a supportive and inclusive event that took place from July 25th to July 27th, 2025. It was designed to encourage women to collaborate, learn new skills, and build creative projects in a friendly environment.
+        </p>
+        <p>
+          This hackathon inspired us to create a fun and lighthearted app that combines glitchy vibes with random compliments and memes — perfect for sharing smiles and good energy.
+        </p>
+        <p>
+          We're proud to be part of this community and hope our project spreads some joy to everyone who visits!
+        </p>
       </section>
 
-      <section id= "contact" className = "section">
-        <h2>Contact</h2>
+     <section id="contact" className="section">
+      <h2>Contact</h2>
+      <p>
+        Have questions, feedback, or just want to say hi? Feel free to reach out!
+      </p>
+      <p>
+        The main contact for this project is <strong>Sarah</strong>. You can email her at <em>sarah.okome7@gmail.com</em>.
+      </p>
+      <p>
+        We’d love to hear from you and keep spreading good vibes together!
+      </p>
+    </section>
 
-        <p>Stuff goes here</p>
-     </section>
 
       {/*Footer*/}
       <footer className="footer">

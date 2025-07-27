@@ -130,6 +130,24 @@ body.dark-mode .footer {
   background-color: #990099;
 }
 
+.meme-image {
+  max-width: 300px;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #ff00ff;
+  animation: pop-in 0.3s ease-out;
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
 /*Footer*/
 
