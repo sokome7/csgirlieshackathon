@@ -8,7 +8,6 @@
 - Random meme image display
 - Y2K and glitch-inspired design
 - Dark mode support
-- Optional integration with the OpenAI API for dynamic compliment generation
 
 ## Prerequisites
 
@@ -57,6 +56,12 @@ Technologies Used
 
 Design Philosophy
 The visual design of iComplimentU draws from the aesthetics of early 2000s internet culture (Y2K), combining neon gradients, glitch animations, retro web fonts, and nostalgic elements to create a fun and chaotic user experience.
+
+
+Future Plans
+- Improve the Y2K inspired design
+- Create a logo
+- Use Pixel art for design
 
 License
 This project is licensed under the MIT License. You are free to use, modify, and distribute this project with proper attribution.
