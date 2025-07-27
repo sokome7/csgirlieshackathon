@@ -1,100 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap');
 
+body {
+  background: radial-gradient(circle at top, #dcdcdc 0%, #c0c0c0 100%);
+  font-family: 'Orbitron', Arial, sans-serif;
+  color: #333;
+}
+
+/* App Container */
 .app {
   text-align: center;
   padding: 50px;
-  font-family: 'Arial', sans-serif;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  border: 4px double #ff00ff;
+  box-shadow: 0 0 20px #ff00ff;
+  border-radius: 20px;
 }
 
+/* Header */
 h1 {
+  font-family: 'Press Start 2P', cursive;
   color: #ff00ff;
-  text-shadow: 2px 2px 5px #000;
+  text-shadow: 2px 2px 0 #00ffff, -2px -2px 0 #ff00ff;
+  font-size: 24px;
+  margin-bottom: 30px;
+  animation: flicker 2s infinite alternate;
 }
 
+/* Button */
 button {
-  padding: 12px 24px;
-  font-size: 18px;
-  background: black;
-  color: white;
-  border: 2px solid #ff00ff;
+  padding: 6px 12px;
+  font-size: 14px;
+  min-width: 80px;       
+  height: 30px;        
+  background: linear-gradient(to right, #000000, #222222);
+  color: #00ffff;
+  font-family: 'Orbitron', sans-serif;
+  border: 2px outset #ff00ff;
+  box-shadow: 0 0 12px #ff00ff;
   cursor: pointer;
   transition: all 0.3s ease;
+ 
+
 }
 
 button:hover {
   background: #ff00ff;
   color: black;
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00ffff;
 }
 
-
-/*navbar*/
+/* Navbar */
 .navbar ul {
   z-index: 1000;
   list-style-type: none;
   display: flex;
-  justify-content: flex-end; /* Push items to the right */
+  justify-content: flex-end;
   align-items: center;
   position: fixed;
   top: 0;
   right: 0;
   width: 100%;
-  padding: 10px 20px;
-  background-color:  #c69fa5; /* optional: make it blend with background */
+  height: 35px; /* reduced height */
+  padding: 5px 15px; /* less padding */
+  background-color: #c69fa5;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 12px; /* smaller font */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
+
 
 
 .navbar ul li {
   margin-left: 15px;
 }
 
-
 .navbar ul li a {
-    display: block;
-    text-decoration: none;
-    color: #aa5aaa;
-    text-align: center;
-    padding:5px 5px;
+  color: #000;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .navbar ul li a:hover {
-  text-decoration: underline; /* adds underline on hover */
-  text-decoration-color: darkviolet;            /* text changes to a rich contrast color */
+  background-color: #ffe0ff;
+  text-decoration: underline;
 }
 
-
-
-body.dark-mode {
-  background-color: #242424;
-  color: rgba(255, 255, 255, 0.87);
-}
-
-body.dark-mode button {
-  background-color: #1a1a1a;
-  color: white;
-  border: 2px solid #ff00ff;
-}
-
-body.dark-mode h1 {
-  color: #ffffff;
-  text-shadow: 2px 2px 5px #aa00ff;
-}
-
-body.dark-mode .navbar ul {
-  background-color: #660066;
-}
-
-body.dark-mode .footer {
-  background-color: #990099;
-}
-
+/* Meme Image */
 .meme-image {
   max-width: 300px;
   margin-top: 20px;
   border-radius: 12px;
-  box-shadow: 0 0 10px #ff00ff;
-  animation: pop-in 0.3s ease-out;
+  border: 3px ridge #ff00ff;
+  box-shadow: 0 0 10px #00ffff;
+  animation: pop-in 0.4s ease-out, glitchImage 1s infinite;
 }
 
+/* Footer */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to right, #cc99ff, #ffccff);
+  color: black;
+  text-align: left;
+  padding: 10px;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 14px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ff00ff;
+  text-decoration: underline;
+}
+
+/* Animations */
 @keyframes pop-in {
   0% {
     transform: scale(0.8);
@@ -106,36 +135,72 @@ body.dark-mode .footer {
   }
 }
 
-/*Footer*/
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 0.7; }
+  50% { opacity: 0.4; }
+  55% { opacity: 0.9; }
+}
 
-.footer { /* Example B: This styles elements with class="footer" */
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #c69fa5; /* soft pink boba tone */
-  color: white;
-  text-align: Left;
-  padding: 10px 0;
-  font-family: 'Comic Sans MS', cursive;
-  font-size: 14px;
-  z-index: 1000; /* keeps it on top of other elements */
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+@keyframes glitchImage {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -2px); }
+  100% { transform: translate(0); }
 }
-.footer a {
+
+/* Dark Mode Enhancements */
+body.dark-mode {
+  background: linear-gradient(to bottom, #000000, #1a001a);
   color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s ease;
 }
+
+
+/* Header text */
+body.dark-mode h1 {
+  text-shadow: 2px 2px 4px #ff00ff;
+}
+
+/* Navbar background and text */
+body.dark-mode .navbar ul {
+  background-color: #330033;
+}
+
+body.dark-mode .navbar ul li a {
+  color: #ddaaff; /* light pastel purple for contrast */
+}
+
+body.dark-mode .navbar ul li a:hover {
+  background-color: #550055;
+  text-decoration-color: #ff99ff;
+}
+
+/* Footer background and text */
+body.dark-mode .footer {
+  background-color: #660066;
+  color: #ffe0ec;
+}
+
+body.dark-mode .footer a {
+  color: #ffe0ec;
+}
+
+body.dark-mode .footer a:hover {
+  color:  #330033;
+}
+
+
+.dark-mode-button:hover {
+  background-color: #ff00ff;
+  color: black;
+  transform: scale(1.05);
+}
+
 .footer-icon {
-  width: 30px; /* or 20px, depending on your design */
-  height: 30px;
-  margin: 0 10px;
+  width: 20px;
+  height: 20px;
+  margin: 0 8px;
 }
 
-
-.footer a:hover {
-  color: #ffe0ec; /* light pastel hover */
-}

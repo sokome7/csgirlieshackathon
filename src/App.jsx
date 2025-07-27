@@ -54,7 +54,7 @@ function App() {
         
       </section> */}
       <section id="home" className="section">
-      <h1>✨ iComplimnet U ✨</h1>
+      <h1>✨ iCompliment U ✨</h1>
       <p>Click below to generate a compliment</p>
       <button onClick={generateCompliment}>Generate Compliment</button>
       

@@ -62,6 +62,7 @@ Future Plans
 - Improve the Y2K inspired design
 - Create a logo
 - Use Pixel art for design
+- Fix background color on darkmode
 
 License
 This project is licensed under the MIT License. You are free to use, modify, and distribute this project with proper attribution.
